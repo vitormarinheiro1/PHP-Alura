@@ -8,12 +8,19 @@ $nomeFilme = "Bad Boys 3";
 $anoLancamento = 2024;
 
 $quantidadeDeNotas = $argc - 1;
-$somaDeNotas = 0;
+$notas = [];
 
 // inicializacao; condicao da repeticao; incremento
-for ($contador = 1; $contador < $argc; $contador += 1) {
-    $somaDeNotas += $argv[$contador];
+for ($contador = 1; $contador < $argc; $contador ++) {
+    $notas[] = (float) $argv[$contador];
 }
+
+// $somaDeNotas = 0;
+// foreach ($notas as $nota) {
+//     $somaDeNotas += $nota;
+// }
+
+var_dump($notas);
 
 // USO DO WHILE
 // $contador = 1;
@@ -26,7 +33,7 @@ for ($contador = 1; $contador < $argc; $contador += 1) {
 // } while (true);
 
 
-$notaFilme = $somaDeNotas / $quantidadeDeNotas;
+$notaFilme = array_sum($notas) / $quantidadeDeNotas;
 $planoPrime = true;
 
 $incluidoNoPlano = $planoPrime || $anoLancamento < 2020;
@@ -57,4 +64,16 @@ $genero = match ($nomeFilme) {
     default => "Gênero desconhecido"
 };
 
-echo "O gênero do filme é: $genero";
+echo "O gênero do filme é: $genero\n";
+
+// var_dump
+
+// array associativo
+$filme = [
+    "nome" => "Thor: Ragnarok",
+    "ano" => 2021,
+    "nota" => 7.8,
+    "genero" => "Super-herói",
+];
+
+echo $filme["nome"];
