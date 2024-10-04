@@ -5,15 +5,28 @@ echo "Bem-vindo ao Top Video!\n";
 // $nomeFilme = "Se beber não case";
 // $nomeFilme = "Thor: Ragnarok";
 $nomeFilme = "Bad Boys 3";
-$anoLancamento = $argv[1] ?? 2024;
+$anoLancamento = 2024;
 
-$somaDeNotas = 10;
-$somaDeNotas += 9.5;
-$somaDeNotas += 8;
-$somaDeNotas += 7.5;
-$somaDeNotas += 6;
+$quantidadeDeNotas = $argc - 1;
+$somaDeNotas = 0;
 
-$notaFilme = $somaDeNotas / 5;
+// inicializacao; condicao da repeticao; incremento
+for ($contador = 1; $contador < $argc; $contador += 1) {
+    $somaDeNotas += $argv[$contador];
+}
+
+// USO DO WHILE
+// $contador = 1;
+// while ($argv[$contador] != 0) {
+//     $somaDeNotas += $argv[$contador++];
+// }
+
+// do {
+//     alguma ação
+// } while (true);
+
+
+$notaFilme = $somaDeNotas / $quantidadeDeNotas;
 $planoPrime = true;
 
 $incluidoNoPlano = $planoPrime || $anoLancamento < 2020;
