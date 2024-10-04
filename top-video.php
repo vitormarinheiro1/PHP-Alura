@@ -1,5 +1,20 @@
 <?php
 
+function exibeMensagemLancamento($ano) {
+    if ($ano > 2023) {
+        echo "Esse filme é um lançamento.";
+    } elseif ($ano > 2020 && $ano <= 2023) {
+        echo "Esse filme ainda é novo.";
+    } else {
+        echo "Esse filme não é um lançamento.";
+    }
+    echo "\n";
+}
+
+function incluidoNoPlano($plano, $ano) {
+    return $plano || $ano < 2020;
+}
+
 echo "Bem-vindo ao Top Video!\n";
 
 // $nomeFilme = "Se beber não case";
@@ -20,7 +35,7 @@ for ($contador = 1; $contador < $argc; $contador ++) {
 //     $somaDeNotas += $nota;
 // }
 
-var_dump($notas);
+
 
 // USO DO WHILE
 // $contador = 1;
@@ -28,15 +43,11 @@ var_dump($notas);
 //     $somaDeNotas += $argv[$contador++];
 // }
 
-// do {
-//     alguma ação
-// } while (true);
-
 
 $notaFilme = array_sum($notas) / $quantidadeDeNotas;
 $planoPrime = true;
 
-$incluidoNoPlano = $planoPrime || $anoLancamento < 2020;
+$incluidoNoPlano = incluidoNoPlano($planoPrime, $anoLancamento);
 
 echo "Nome do Filme: $nomeFilme";
 echo "\n";
@@ -47,14 +58,7 @@ echo "\n";
 // Concatenação .
 echo "Ano de Lançamento: " . $anoLancamento . "\n";
 
-if ($anoLancamento > 2023) {
-    echo "Esse filme é um lançamento.";
-} elseif ($anoLancamento > 2020 && $anoLancamento <= 2023) {
-    echo "Esse filme ainda é novo.";
-} else {
-    echo "Esse filme não é um lançamento.";
-}
-echo "\n";
+exibeMensagemLancamento($anoLancamento);
 
 // Match Expression
 $genero = match ($nomeFilme) {
@@ -76,4 +80,6 @@ $filme = [
     "genero" => "Super-herói",
 ];
 
-echo $filme["nome"];
+// echo $filme["nome"];
+
+
