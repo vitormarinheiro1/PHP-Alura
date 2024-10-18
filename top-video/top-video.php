@@ -1,19 +1,6 @@
 <?php
 
-function exibeMensagemLancamento(int $ano): void {
-    if ($ano > 2023) {
-        echo "Esse filme é um lançamento.";
-    } elseif ($ano > 2020 && $ano <= 2023) {
-        echo "Esse filme ainda é novo.";
-    } else {
-        echo "Esse filme não é um lançamento.";
-    }
-    echo "\n";
-}
-
-function incluidoNoPlano(bool $plano, int $ano): bool {
-    return $plano || $ano < 2020;
-}
+require __DIR__ . "/funcoes.php";
 
 echo "Bem-vindo ao Top Video!\n";
 
@@ -26,7 +13,7 @@ $quantidadeDeNotas = $argc - 1;
 $notas = [];
 
 // inicializacao; condicao da repeticao; incremento
-for ($contador = 1; $contador < $argc; $contador ++) {
+for ($contador = 1; $contador < $argc; $contador++) {
     $notas[] = (float) $argv[$contador];
 }
 
@@ -81,3 +68,13 @@ $filme = [
 ];
 
 // echo $filme["nome"];
+var_dump($notas);
+sort($notas);
+echo min($notas);
+echo "\n";
+
+// var_dump(strpos($filme['nome'], ':'));
+$posicaoDoisPontos = strpos($filme['nome'], ':');
+var_dump($posicaoDoisPontos);
+
+var_dump(substr($filme['nome'], 0, $posicaoDoisPontos));
