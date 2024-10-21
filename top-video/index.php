@@ -1,5 +1,6 @@
 <?php
 
+require __DIR__ . "/src/Modelo/Filme.php";
 require __DIR__ . "/src/funcoes.php";
 
 echo "Bem-vindo ao Top Video!\n";
@@ -74,10 +75,10 @@ echo min($notas);
 echo "\n";
 
 // var_dump(strpos($filme['nome'], ':'));
-$posicaoDoisPontos = strpos($filme['nome'], ':');
+$posicaoDoisPontos = strpos($filme->nome, ':');
 var_dump($posicaoDoisPontos);
 
-var_dump(substr($filme['nome'], 0, $posicaoDoisPontos));
+var_dump(substr($filme->nome, 0, $posicaoDoisPontos));
 
 // echo json_encode($filme);
 // var_dump(json_decode('{"nome":"Thor: Ragnarok","ano":2021,"nota":7.8,"genero":"Super-her\u00f3i"}', true));
