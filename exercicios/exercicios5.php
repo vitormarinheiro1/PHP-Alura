@@ -22,3 +22,4 @@ $array = array("banana", "abacaxi", "laranja", "uva");
 $arrayOrdenado = ordenarStrings($array);
 echo "Array ordenado: ";
 print_r($arrayOrdenado);
+

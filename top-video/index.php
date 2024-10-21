@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/funcoes.php";
+require __DIR__ . "/src/funcoes.php";
 
 echo "Bem-vindo ao Top Video!\n";
 
@@ -60,12 +60,12 @@ echo "O gênero do filme é: $genero\n";
 // var_dump
 
 // array associativo
-$filme = [
-    "nome" => "Thor: Ragnarok",
-    "ano" => 2021,
-    "nota" => 7.8,
-    "genero" => "Super-herói",
-];
+$filme = criaFilme(
+    nome: "Thor: Ragnarok",
+    anoLancamento: 2021,
+    nota: 7.8,
+    genero: "Super-herói"
+);
 
 // echo $filme["nome"];
 var_dump($notas);
@@ -78,3 +78,10 @@ $posicaoDoisPontos = strpos($filme['nome'], ':');
 var_dump($posicaoDoisPontos);
 
 var_dump(substr($filme['nome'], 0, $posicaoDoisPontos));
+
+// echo json_encode($filme);
+// var_dump(json_decode('{"nome":"Thor: Ragnarok","ano":2021,"nota":7.8,"genero":"Super-her\u00f3i"}', true));
+
+$filmeComoStringJson = json_encode($filme);
+
+file_put_contents(__DIR__ . '/filme.json', $filmeComoStringJson);
