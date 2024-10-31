@@ -2,10 +2,16 @@
 
 class Filme
 {
-    private string $nome = 'Nome padrão';
-    private int $anoLancamento = 2024;
-    private string $genero = 'Ação';
-    private array $notas = [];
+    private array $notas;
+
+    public function __construct(
+        private string $nome,
+        private int $anoLancamento,
+        private string $genero
+    )
+    {
+        $this->notas = [];
+    }
 
     public function avalia(float $nota): void
     {
@@ -27,28 +33,28 @@ class Filme
     }
 
     // SETTER
-    public function setAnoLancamento(int $anoLancamento): void
-    {
-        $this->anoLancamento = $anoLancamento;
-    }
+    // public function setAnoLancamento(int $anoLancamento): void
+    // {
+    //     $this->anoLancamento = $anoLancamento;
+    // }
 
     public function getNome(): string
     {
         return $this->nome;
     }
 
-    public function setNome(string $nome): void
-    {
-        $this->nome = $nome;
-    }
+    // public function setNome(string $nome): void
+    // {
+    //     $this->nome = $nome;
+    // }
 
     public function getGenero(): string
     {
         return $this->genero;
     }
 
-    public function setGenero(string $genero): void
-    {
-        $this->genero = $genero;
-    }
+    // public function setGenero(string $genero): void
+    // {
+    //     $this->genero = $genero;
+    // }
 }
