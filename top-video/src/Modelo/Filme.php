@@ -5,9 +5,9 @@ class Filme
     private array $notas;
 
     public function __construct(
-        private string $nome,
-        private int $anoLancamento,
-        private string $genero
+        public readonly string $nome,
+        public readonly int $anoLancamento,
+        public readonly string $genero
     )
     {
         $this->notas = [];
@@ -27,10 +27,10 @@ class Filme
     }
 
     // GETTER
-    public function getAnoLancamento(): int
-    {
-        return $this->anoLancamento;
-    }
+    // public function getAnoLancamento(): int
+    // {
+    //     return $this->anoLancamento;
+    // }
 
     // SETTER
     // public function setAnoLancamento(int $anoLancamento): void
@@ -38,20 +38,20 @@ class Filme
     //     $this->anoLancamento = $anoLancamento;
     // }
 
-    public function getNome(): string
-    {
-        return $this->nome;
-    }
+    // public function getNome(): string
+    // {
+    //     return $this->nome;
+    // }
 
     // public function setNome(string $nome): void
     // {
     //     $this->nome = $nome;
     // }
 
-    public function getGenero(): string
-    {
-        return $this->genero;
-    }
+    // public function getGenero(): string
+    // {
+    //     return $this->genero;
+    // }
 
     // public function setGenero(string $genero): void
     // {

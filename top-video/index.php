@@ -22,6 +22,6 @@ var_dump($filme);
 
 echo $filme->media() . "\n";
 
-echo $filme->getAnoLancamento() . "\n";
-echo $filme->getNome() . "\n";
-echo $filme->getGenero() . "\n";
+echo $filme->anoLancamento . "\n";
+echo $filme->nome . "\n";
+echo $filme->genero . "\n";
