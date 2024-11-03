@@ -1,7 +1,9 @@
 <?php
 
 require __DIR__ . '/src/Modelo/Genero.php';
+require __DIR__ . '/src/Modelo/Titulo.php';
 require __DIR__ . '/src/Modelo/Filme.php';
+require __DIR__ . '/src/Modelo/Serie.php';
 
 echo "Bem-vindo(a) ao Top Vídeo\n";
 
@@ -26,3 +28,11 @@ echo $filme->media() . "\n";
 
 echo $filme->anoLancamento . "\n";
 echo $filme->nome . "\n";
+
+$serie = new Serie('Lost', 2009, Genero::Acao, 10, 20, 30);
+
+echo $serie->anoLancamento . "\n";
+
+$serie->avalia(8);
+
+echo $serie->media() . "\n";
